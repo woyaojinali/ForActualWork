@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+	<context id="context" targetRuntime="MyBatis3">
+
+		<!--oracla-->
+		<!--connectionURL="jdbc:oracle:thin:@172.16.182.18:1521:orcl"-->
+		<!--driverClass="oracle.jdbc.driver.OracleDriver"-->
+		<jdbcConnection
+			driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost:3306/test?serverTimezone=CTT"
+			userId="root" password="root" />
+		<javaModelGenerator
+			targetPackage="com.rainbow.test.model"
+			targetProject="src/main/java">
+			<property name="enableSubPackages" value="false" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+		<sqlMapGenerator targetPackage="com.rainbow.test.mapper"
+			targetProject="src/main/resources">
+			<property name="enableSubPackages" value="false" />
+			<property name="isMergeable" value="false" />
+		</sqlMapGenerator>
+		<javaClientGenerator
+			targetPackage="com.rainbow.test.mapper"
+			targetProject="src/main/java" type="XMLMAPPER">
+			<property name="enableSubPackages" value="false" />
+		</javaClientGenerator>
+        <table tableName="person"></table>
+	</context>
+</generatorConfiguration>	
